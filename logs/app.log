@@ -1,0 +1,422 @@
+2026-08-21 23:49:38.253 | INFO     | request_id - 1 | app.services.meta_knowledge_service:build:272 - 保存表信息和字段信息到 Meta MySQL
+2026-08-21 23:49:49.751 | INFO     | request_id - 1 | app.services.meta_knowledge_service:build:275 - 为字段信息建立向量索引
+2026-08-21 23:49:50.201 | INFO     | request_id - 1 | app.services.meta_knowledge_service:build:278 - 为字段取值建立全文索引
+2026-08-21 23:49:50.210 | INFO     | request_id - 1 | app.services.meta_knowledge_service:build:284 - 保存指标信息到数据库成功
+2026-08-21 23:49:51.042 | INFO     | request_id - 1 | app.services.meta_knowledge_service:build:288 - 为指标信息建立向量索引成功
+2026-08-21 23:52:15.127 | INFO     | request_id - c6ee92b6-58d0-42b1-b3af-04aa920922f1 | app.agent.nodes.extract_keywords:extract_keywords:50 - 抽取关键词成功: ['fragment', 'InputValue', 'TypeRef', 'IntrospectionQuery', 'true', 'ofType', 'name', '\n    query IntrospectionQuery {\n      __schema {\n        \n        queryType { name }\n        mutationType { name }\n        subscriptionType { name }\n        types {\n          ...FullType\n        }\n        directives {\n          name\n          description\n          \n          locations\n          args {\n            ...InputValue\n          }\n        }\n      }\n    }\n\n    fragment FullType on __Type {\n      kind\n      name\n      description\n      \n      fields(includeDeprecated: true) {\n        name\n        description\n        args {\n          ...InputValue\n        }\n        type {\n          ...TypeRef\n        }\n        isDeprecated\n        deprecationReason\n      }\n      inputFields {\n        ...InputValue\n      }\n      interfaces {\n        ...TypeRef\n      }\n      enumValues(includeDeprecated: true) {\n        name\n        description\n        isDeprecated\n        deprecationReason\n      }\n      possibleTypes {\n        ...TypeRef\n      }\n    }\n\n    fragment InputValue on __InputValue {\n      name\n      description\n      type { ...TypeRef }\n      defaultValue\n      \n      \n    }\n\n    fragment TypeRef on __Type {\n      kind\n      name\n      ofType {\n        kind\n        name\n        ofType {\n          kind\n          name\n          ofType {\n            kind\n            name\n            ofType {\n              kind\n              name\n              ofType {\n                kind\n                name\n                ofType {\n                  kind\n                  name\n                  ofType {\n                    kind\n                    name\n                  }\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  ', 'schema', 'description', 'queryType', 'kind', 'query', 'FullType', 'args', 'includeDeprecated', 'Type', 'mutationType', 'isDeprecated', 'deprecationReason', 'type']
+2026-08-21 23:52:45.466 | INFO     | request_id - 4ad51362-be7e-4b2f-8711-8a377d199ad9 | app.agent.nodes.extract_keywords:extract_keywords:50 - 抽取关键词成功: ['统计', '销售总额', '华北地区', '统计华北地区的销售总额']
+2026-08-21 23:52:49.419 | INFO     | request_id - 4ad51362-be7e-4b2f-8711-8a377d199ad9 | app.agent.nodes.recall_metric:recall_metric:65 - 检索到指标信息：['GMV', 'AOV']
+2026-08-21 23:53:34.371 | INFO     | request_id - c6ee92b6-58d0-42b1-b3af-04aa920922f1 | app.agent.nodes.recall_value:recall_value:63 - 检索到字段取值：[]
+2026-08-21 23:54:57.004 | INFO     | request_id - 149120f4-e00e-4662-89ef-02bcbf098b47 | app.agent.nodes.extract_keywords:extract_keywords:50 - 抽取关键词成功: ['统计', '品类', '商品', '销售额', '销量', '统计 2025 年 3 月各商品品类的销量和销售额']
+2026-08-21 23:55:06.818 | INFO     | request_id - 149120f4-e00e-4662-89ef-02bcbf098b47 | app.agent.nodes.recall_metric:recall_metric:65 - 检索到指标信息：['GMV', 'AOV']
+2026-08-21 23:55:12.124 | INFO     | request_id - 149120f4-e00e-4662-89ef-02bcbf098b47 | app.agent.nodes.recall_value:recall_value:63 - 检索到字段取值：[]
+2026-08-21 23:55:28.847 | INFO     | request_id - 149120f4-e00e-4662-89ef-02bcbf098b47 | app.agent.nodes.merge_retrieved_info:merge_retrieved_info:143 - 合并后的表信息：['fact_order', 'dim_product', 'dim_region', 'dim_date']
+2026-08-21 23:55:28.847 | INFO     | request_id - 149120f4-e00e-4662-89ef-02bcbf098b47 | app.agent.nodes.merge_retrieved_info:merge_retrieved_info:146 - 合并后的指标信息：['GMV', 'AOV']
+2026-08-21 23:55:50.295 | INFO     | request_id - 149120f4-e00e-4662-89ef-02bcbf098b47 | app.agent.nodes.filter_metric:filter_metric:54 - 过滤后的指标信息：[]
+2026-08-22 00:00:35.268 | INFO     | request_id - 10af21ef-e904-4dc9-aa65-5cdb241bb873 | app.agent.nodes.extract_keywords:extract_keywords:50 - 抽取关键词成功: ['统计', '商品', '统计 2025 年 3 月各商品品类的销量和销售额', '品类', '销量', '销售额']
+2026-08-22 00:01:01.761 | INFO     | request_id - 10af21ef-e904-4dc9-aa65-5cdb241bb873 | app.agent.nodes.recall_metric:recall_metric:65 - 检索到指标信息：['GMV', 'AOV']
+2026-08-22 00:02:26.386 | INFO     | request_id - 10af21ef-e904-4dc9-aa65-5cdb241bb873 | app.agent.nodes.recall_value:recall_value:63 - 检索到字段取值：[]
+2026-08-22 00:03:03.233 | INFO     | request_id - 8d3f8be3-5236-41e8-97ee-ee6476e70bfe | app.agent.nodes.extract_keywords:extract_keywords:50 - 抽取关键词成功: ['商品', '统计 2025 年 3 月各商品品类的销量和销售额', '销售额', '品类', '销量', '统计']
+2026-08-22 00:03:17.272 | INFO     | request_id - 8d3f8be3-5236-41e8-97ee-ee6476e70bfe | app.agent.nodes.recall_metric:recall_metric:65 - 检索到指标信息：['GMV', 'AOV']
+2026-08-22 00:06:18.954 | INFO     | request_id - 1475b2ed-c845-480f-8b7d-bd2265a926e6 | app.agent.nodes.extract_keywords:extract_keywords:50 - 抽取关键词成功: ['第一季度', 'GMV', '大区', '统计 2025 年第一季度各大区的 GMV，并按 GMV 从高到低排序', '统计', '排序']
+2026-08-22 00:06:19.667 | INFO     | request_id - 1475b2ed-c845-480f-8b7d-bd2265a926e6 | app.agent.nodes.recall_value:recall_value:63 - 检索到字段取值：[]
+2026-08-22 00:06:21.119 | INFO     | request_id - 1475b2ed-c845-480f-8b7d-bd2265a926e6 | app.agent.nodes.recall_metric:recall_metric:65 - 检索到指标信息：['GMV', 'AOV']
+2026-08-22 00:06:21.158 | INFO     | request_id - 1475b2ed-c845-480f-8b7d-bd2265a926e6 | app.agent.nodes.merge_retrieved_info:merge_retrieved_info:143 - 合并后的表信息：['dim_date', 'fact_order', 'dim_region', 'dim_product']
+2026-08-22 00:06:21.158 | INFO     | request_id - 1475b2ed-c845-480f-8b7d-bd2265a926e6 | app.agent.nodes.merge_retrieved_info:merge_retrieved_info:146 - 合并后的指标信息：['GMV', 'AOV']
+2026-08-22 00:06:21.525 | INFO     | request_id - 1475b2ed-c845-480f-8b7d-bd2265a926e6 | app.agent.nodes.filter_metric:filter_metric:54 - 过滤后的指标信息：['GMV']
+2026-08-22 00:06:21.791 | INFO     | request_id - 1475b2ed-c845-480f-8b7d-bd2265a926e6 | app.agent.nodes.filter_table:filter_table:60 - 过滤后的表信息：['dim_date', 'fact_order', 'dim_region']
+2026-08-22 00:06:21.806 | INFO     | request_id - 1475b2ed-c845-480f-8b7d-bd2265a926e6 | app.agent.nodes.add_extra_context:add_extra_context:36 - 数据库信息：{'dialect': 'mysql', 'version': '8.0.46'}
+2026-08-22 00:06:21.806 | INFO     | request_id - 1475b2ed-c845-480f-8b7d-bd2265a926e6 | app.agent.nodes.add_extra_context:add_extra_context:37 - 日期信息：{'date': '2026-08-22', 'weekday': 'Saturday', 'quarter': 'Q3'}
+2026-08-22 00:06:22.870 | INFO     | request_id - 1475b2ed-c845-480f-8b7d-bd2265a926e6 | app.agent.nodes.generate_sql:generate_sql:63 - 生成的SQL：
+SELECT dim_region.region_name AS 大区, SUM(fact_order.order_amount) AS GMV
+FROM fact_order
+JOIN dim_region ON fact_order.region_id = dim_region.region_name
+JOIN dim_date ON fact_order.date = dim_date.date
+WHERE dim_date.quarter = 'Q1' AND dim_date.year = 2025
+GROUP BY dim_region.region_name
+ORDER BY GMV DESC
+2026-08-22 00:06:22.876 | INFO     | request_id - 1475b2ed-c845-480f-8b7d-bd2265a926e6 | app.agent.nodes.validate_sql:validate_sql:38 - SQL语法错误：(asyncmy.errors.OperationalError) (1054, "Unknown column 'fact_order.date' in 'on clause'")
+[SQL: explain 
+SELECT dim_region.region_name AS 大区, SUM(fact_order.order_amount) AS GMV
+FROM fact_order
+JOIN dim_region ON fact_order.region_id = dim_region.region_name
+JOIN dim_date ON fact_order.date = dim_date.date
+WHERE dim_date.quarter = 'Q1' AND dim_date.year = 2025
+GROUP BY dim_region.region_name
+ORDER BY GMV DESC]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-08-22 00:06:23.992 | INFO     | request_id - 1475b2ed-c845-480f-8b7d-bd2265a926e6 | app.agent.nodes.correct_sql:correct_sql:72 - 校正后的SQL：
+SELECT dim_region.region_name AS 大区, SUM(fact_order.order_amount) AS GMV
+FROM fact_order
+JOIN dim_region ON fact_order.region_id = dim_region.region_id
+JOIN dim_date ON fact_order.date_id = dim_date.date_id
+WHERE dim_date.quarter = 'Q1' AND dim_date.year = 2025
+GROUP BY dim_region.region_name
+ORDER BY GMV DESC
+2026-08-22 00:06:23.997 | INFO     | request_id - 1475b2ed-c845-480f-8b7d-bd2265a926e6 | app.agent.nodes.run_sql:run_sql:29 - SQL执行结果：[]
+2026-08-22 00:06:51.087 | INFO     | request_id - 4cd61896-5a9f-42a6-9e64-29d9880e2415 | app.agent.nodes.extract_keywords:extract_keywords:50 - 抽取关键词成功: ['最高', '第一季度', '查询华东地区 2025 年第一季度销售额最高的前 5 个商品', '查询', '销售额', '华东地区', '商品']
+2026-08-22 00:06:51.744 | INFO     | request_id - 4cd61896-5a9f-42a6-9e64-29d9880e2415 | app.agent.nodes.recall_value:recall_value:63 - 检索到字段取值：[]
+2026-08-22 00:06:52.893 | INFO     | request_id - 4cd61896-5a9f-42a6-9e64-29d9880e2415 | app.agent.nodes.recall_metric:recall_metric:65 - 检索到指标信息：['GMV', 'AOV']
+2026-08-22 00:06:53.655 | INFO     | request_id - 4cd61896-5a9f-42a6-9e64-29d9880e2415 | app.agent.nodes.merge_retrieved_info:merge_retrieved_info:143 - 合并后的表信息：['dim_date', 'dim_region', 'fact_order', 'dim_product', 'dim_customer']
+2026-08-22 00:06:53.655 | INFO     | request_id - 4cd61896-5a9f-42a6-9e64-29d9880e2415 | app.agent.nodes.merge_retrieved_info:merge_retrieved_info:146 - 合并后的指标信息：['GMV', 'AOV']
+2026-08-22 00:06:53.944 | INFO     | request_id - 4cd61896-5a9f-42a6-9e64-29d9880e2415 | app.agent.nodes.filter_metric:filter_metric:54 - 过滤后的指标信息：[]
+2026-08-22 00:06:54.459 | INFO     | request_id - 4cd61896-5a9f-42a6-9e64-29d9880e2415 | app.agent.nodes.filter_table:filter_table:60 - 过滤后的表信息：['dim_date', 'dim_region', 'fact_order', 'dim_product']
+2026-08-22 00:06:54.463 | INFO     | request_id - 4cd61896-5a9f-42a6-9e64-29d9880e2415 | app.agent.nodes.add_extra_context:add_extra_context:36 - 数据库信息：{'dialect': 'mysql', 'version': '8.0.46'}
+2026-08-22 00:06:54.463 | INFO     | request_id - 4cd61896-5a9f-42a6-9e64-29d9880e2415 | app.agent.nodes.add_extra_context:add_extra_context:37 - 日期信息：{'date': '2026-08-22', 'weekday': 'Saturday', 'quarter': 'Q3'}
+2026-08-22 00:06:55.859 | INFO     | request_id - 4cd61896-5a9f-42a6-9e64-29d9880e2415 | app.agent.nodes.generate_sql:generate_sql:63 - 生成的SQL：
+SELECT dim_product.product_name AS 商品名称, SUM(fact_order.order_amount) AS 销售额
+FROM dim_date
+JOIN dim_region ON dim_date.quarter = 'Q1' AND dim_date.year = 2025
+JOIN fact_order ON dim_date.quarter = fact_order.quarter AND dim_date.year = fact_order.year
+JOIN dim_product ON fact_order.product_id = dim_product.product_id
+WHERE dim_region.region_name = '华东'
+GROUP BY dim_product.product_name
+ORDER BY 销售额 DESC
+LIMIT 5
+2026-08-22 00:06:55.862 | INFO     | request_id - 4cd61896-5a9f-42a6-9e64-29d9880e2415 | app.agent.nodes.validate_sql:validate_sql:38 - SQL语法错误：(asyncmy.errors.OperationalError) (1054, "Unknown column 'fact_order.quarter' in 'on clause'")
+[SQL: explain 
+SELECT dim_product.product_name AS 商品名称, SUM(fact_order.order_amount) AS 销售额
+FROM dim_date
+JOIN dim_region ON dim_date.quarter = 'Q1' AND dim_date.year = 2025
+JOIN fact_order ON dim_date.quarter = fact_order.quarter AND dim_date.year = fact_order.year
+JOIN dim_product ON fact_order.product_id = dim_product.product_id
+WHERE dim_region.region_name = '华东'
+GROUP BY dim_product.product_name
+ORDER BY 销售额 DESC
+LIMIT 5]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-08-22 00:06:58.466 | INFO     | request_id - 4cd61896-5a9f-42a6-9e64-29d9880e2415 | app.agent.nodes.correct_sql:correct_sql:72 - 校正后的SQL：
+SELECT dim_product.product_name AS 商品名称, SUM(fact_order.order_amount) AS 销售额
+FROM dim_date
+JOIN dim_region ON dim_date.quarter = 'Q1' AND dim_date.year = 2025
+JOIN fact_order ON dim_date.year = fact_order.year
+JOIN dim_product ON fact_order.product_id = dim_product.product_id
+WHERE dim_region.region_name = '华东'
+GROUP BY dim_product.product_name
+ORDER BY 销售额 DESC
+LIMIT 5
+2026-08-22 00:06:58.469 | ERROR    | request_id - 4cd61896-5a9f-42a6-9e64-29d9880e2415 | app.agent.nodes.run_sql:run_sql:34 - 执行SQL failed: (asyncmy.errors.OperationalError) (1054, "Unknown column 'fact_order.year' in 'on clause'")
+[SQL: 
+SELECT dim_product.product_name AS 商品名称, SUM(fact_order.order_amount) AS 销售额
+FROM dim_date
+JOIN dim_region ON dim_date.quarter = 'Q1' AND dim_date.year = 2025
+JOIN fact_order ON dim_date.year = fact_order.year
+JOIN dim_product ON fact_order.product_id = dim_product.product_id
+WHERE dim_region.region_name = '华东'
+GROUP BY dim_product.product_name
+ORDER BY 销售额 DESC
+LIMIT 5]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-08-22 00:07:45.057 | INFO     | request_id - 9b5fe2dc-7edd-43eb-a7f8-8c3cb37ce76a | app.agent.nodes.extract_keywords:extract_keywords:50 - 抽取关键词成功: ['第一季度', '订单数', '统计', '会员', '销售额', '按会员等级统计 2025 年第一季度的订单数和销售额']
+2026-08-22 00:07:45.675 | INFO     | request_id - 9b5fe2dc-7edd-43eb-a7f8-8c3cb37ce76a | app.agent.nodes.recall_value:recall_value:63 - 检索到字段取值：[]
+2026-08-22 00:07:47.571 | INFO     | request_id - 9b5fe2dc-7edd-43eb-a7f8-8c3cb37ce76a | app.agent.nodes.recall_metric:recall_metric:65 - 检索到指标信息：['GMV', 'AOV']
+2026-08-22 00:07:47.834 | INFO     | request_id - 9b5fe2dc-7edd-43eb-a7f8-8c3cb37ce76a | app.agent.nodes.merge_retrieved_info:merge_retrieved_info:143 - 合并后的表信息：['dim_date', 'fact_order', 'dim_customer', 'dim_region']
+2026-08-22 00:07:47.834 | INFO     | request_id - 9b5fe2dc-7edd-43eb-a7f8-8c3cb37ce76a | app.agent.nodes.merge_retrieved_info:merge_retrieved_info:146 - 合并后的指标信息：['GMV', 'AOV']
+2026-08-22 00:07:48.198 | INFO     | request_id - 9b5fe2dc-7edd-43eb-a7f8-8c3cb37ce76a | app.agent.nodes.filter_metric:filter_metric:54 - 过滤后的指标信息：['GMV']
+2026-08-22 00:07:48.703 | INFO     | request_id - 9b5fe2dc-7edd-43eb-a7f8-8c3cb37ce76a | app.agent.nodes.filter_table:filter_table:60 - 过滤后的表信息：['dim_date', 'fact_order', 'dim_customer']
+2026-08-22 00:07:48.706 | INFO     | request_id - 9b5fe2dc-7edd-43eb-a7f8-8c3cb37ce76a | app.agent.nodes.add_extra_context:add_extra_context:36 - 数据库信息：{'dialect': 'mysql', 'version': '8.0.46'}
+2026-08-22 00:07:48.706 | INFO     | request_id - 9b5fe2dc-7edd-43eb-a7f8-8c3cb37ce76a | app.agent.nodes.add_extra_context:add_extra_context:37 - 日期信息：{'date': '2026-08-22', 'weekday': 'Saturday', 'quarter': 'Q3'}
+2026-08-22 00:07:49.869 | INFO     | request_id - 9b5fe2dc-7edd-43eb-a7f8-8c3cb37ce76a | app.agent.nodes.generate_sql:generate_sql:63 - 生成的SQL：
+SELECT dim_customer.member_level AS 会员等级, SUM(fact_order.order_quantity) AS 订单数, SUM(fact_order.order_amount) AS 销售额 FROM fact_order JOIN dim_date ON fact_order.date = dim_date.date WHERE dim_date.quarter = 'Q1' AND YEAR(fact_order.date) = 2025 GROUP BY dim_customer.member_level
+2026-08-22 00:07:49.873 | INFO     | request_id - 9b5fe2dc-7edd-43eb-a7f8-8c3cb37ce76a | app.agent.nodes.validate_sql:validate_sql:38 - SQL语法错误：(asyncmy.errors.OperationalError) (1054, "Unknown column 'dim_customer.member_level' in 'field list'")
+[SQL: explain 
+SELECT dim_customer.member_level AS 会员等级, SUM(fact_order.order_quantity) AS 订单数, SUM(fact_order.order_amount) AS 销售额 FROM fact_order JOIN dim_date ON fact_order.date = dim_date.date WHERE dim_date.quarter = 'Q1' AND YEAR(fact_order.date) = 2025 GROUP BY dim_customer.member_level]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-08-22 00:07:51.835 | INFO     | request_id - 9b5fe2dc-7edd-43eb-a7f8-8c3cb37ce76a | app.agent.nodes.correct_sql:correct_sql:72 - 校正后的SQL：
+SELECT dim_customer.member_level AS 会员等级, SUM(fact_order.order_quantity) AS 订单数, SUM(fact_order.order_amount) AS 销售额 FROM fact_order JOIN dim_customer ON fact_order.customer_id = dim_customer.customer_id JOIN dim_date ON fact_order.date = dim_date.date WHERE dim_date.quarter = 'Q1' AND YEAR(fact_order.date) = 2025 GROUP BY dim_customer.member_level
+2026-08-22 00:07:51.838 | ERROR    | request_id - 9b5fe2dc-7edd-43eb-a7f8-8c3cb37ce76a | app.agent.nodes.run_sql:run_sql:34 - 执行SQL failed: (asyncmy.errors.OperationalError) (1054, "Unknown column 'fact_order.date' in 'where clause'")
+[SQL: 
+SELECT dim_customer.member_level AS 会员等级, SUM(fact_order.order_quantity) AS 订单数, SUM(fact_order.order_amount) AS 销售额 FROM fact_order JOIN dim_customer ON fact_order.customer_id = dim_customer.customer_id JOIN dim_date ON fact_order.date = dim_date.date WHERE dim_date.quarter = 'Q1' AND YEAR(fact_order.date) = 2025 GROUP BY dim_customer.member_level]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-08-22 00:08:01.727 | INFO     | request_id - d5b6b3c2-18da-4851-881b-4e933e8b431e | app.agent.nodes.extract_keywords:extract_keywords:50 - 抽取关键词成功: ['第一季度', '订单数', '统计', '会员', '销售额', '按会员等级统计 2025 年第一季度的订单数和销售额']
+2026-08-22 00:08:02.495 | INFO     | request_id - d5b6b3c2-18da-4851-881b-4e933e8b431e | app.agent.nodes.recall_value:recall_value:63 - 检索到字段取值：[]
+2026-08-22 00:08:04.339 | INFO     | request_id - d5b6b3c2-18da-4851-881b-4e933e8b431e | app.agent.nodes.recall_metric:recall_metric:65 - 检索到指标信息：['GMV', 'AOV']
+2026-08-22 00:08:04.459 | INFO     | request_id - d5b6b3c2-18da-4851-881b-4e933e8b431e | app.agent.nodes.merge_retrieved_info:merge_retrieved_info:143 - 合并后的表信息：['dim_date', 'fact_order', 'dim_customer', 'dim_region']
+2026-08-22 00:08:04.460 | INFO     | request_id - d5b6b3c2-18da-4851-881b-4e933e8b431e | app.agent.nodes.merge_retrieved_info:merge_retrieved_info:146 - 合并后的指标信息：['GMV', 'AOV']
+2026-08-22 00:08:04.801 | INFO     | request_id - d5b6b3c2-18da-4851-881b-4e933e8b431e | app.agent.nodes.filter_metric:filter_metric:54 - 过滤后的指标信息：['GMV']
+2026-08-22 00:08:05.209 | INFO     | request_id - d5b6b3c2-18da-4851-881b-4e933e8b431e | app.agent.nodes.filter_table:filter_table:60 - 过滤后的表信息：['dim_date', 'fact_order', 'dim_customer']
+2026-08-22 00:08:05.212 | INFO     | request_id - d5b6b3c2-18da-4851-881b-4e933e8b431e | app.agent.nodes.add_extra_context:add_extra_context:36 - 数据库信息：{'dialect': 'mysql', 'version': '8.0.46'}
+2026-08-22 00:08:05.213 | INFO     | request_id - d5b6b3c2-18da-4851-881b-4e933e8b431e | app.agent.nodes.add_extra_context:add_extra_context:37 - 日期信息：{'date': '2026-08-22', 'weekday': 'Saturday', 'quarter': 'Q3'}
+2026-08-22 00:08:07.733 | INFO     | request_id - d5b6b3c2-18da-4851-881b-4e933e8b431e | app.agent.nodes.generate_sql:generate_sql:63 - 生成的SQL：
+SELECT dim_customer.member_level AS 会员等级, SUM(fact_order.order_quantity) AS 订单数, SUM(fact_order.order_amount) AS 销售额 FROM fact_order JOIN dim_date ON fact_order.date = dim_date.date WHERE dim_date.quarter = 'Q1' AND dim_date.year = 2025 GROUP BY dim_customer.member_level
+2026-08-22 00:08:07.735 | INFO     | request_id - d5b6b3c2-18da-4851-881b-4e933e8b431e | app.agent.nodes.validate_sql:validate_sql:38 - SQL语法错误：(asyncmy.errors.OperationalError) (1054, "Unknown column 'dim_customer.member_level' in 'field list'")
+[SQL: explain 
+SELECT dim_customer.member_level AS 会员等级, SUM(fact_order.order_quantity) AS 订单数, SUM(fact_order.order_amount) AS 销售额 FROM fact_order JOIN dim_date ON fact_order.date = dim_date.date WHERE dim_date.quarter = 'Q1' AND dim_date.year = 2025 GROUP BY dim_customer.member_level]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-08-22 00:08:09.214 | INFO     | request_id - d5b6b3c2-18da-4851-881b-4e933e8b431e | app.agent.nodes.correct_sql:correct_sql:72 - 校正后的SQL：
+SELECT dim_customer.member_level AS 会员等级, SUM(fact_order.order_quantity) AS 订单数, SUM(fact_order.order_amount) AS 销售额 FROM fact_order JOIN dim_customer ON fact_order.customer_id = dim_customer.customer_id JOIN dim_date ON fact_order.date = dim_date.date WHERE dim_date.quarter = 'Q1' AND dim_date.year = 2025 GROUP BY dim_customer.member_level
+2026-08-22 00:08:09.217 | ERROR    | request_id - d5b6b3c2-18da-4851-881b-4e933e8b431e | app.agent.nodes.run_sql:run_sql:34 - 执行SQL failed: (asyncmy.errors.OperationalError) (1054, "Unknown column 'fact_order.date' in 'on clause'")
+[SQL: 
+SELECT dim_customer.member_level AS 会员等级, SUM(fact_order.order_quantity) AS 订单数, SUM(fact_order.order_amount) AS 销售额 FROM fact_order JOIN dim_customer ON fact_order.customer_id = dim_customer.customer_id JOIN dim_date ON fact_order.date = dim_date.date WHERE dim_date.quarter = 'Q1' AND dim_date.year = 2025 GROUP BY dim_customer.member_level]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-08-22 00:08:19.601 | INFO     | request_id - 4871e640-6558-4974-9553-626753c61d98 | app.agent.nodes.extract_keywords:extract_keywords:50 - 抽取关键词成功: ['品类', '销量', '统计 2025 年 3 月各商品品类的销量和销售额', '统计', '销售额', '商品']
+2026-08-22 00:08:20.135 | INFO     | request_id - 4871e640-6558-4974-9553-626753c61d98 | app.agent.nodes.recall_value:recall_value:63 - 检索到字段取值：[]
+2026-08-22 00:08:21.731 | INFO     | request_id - 4871e640-6558-4974-9553-626753c61d98 | app.agent.nodes.recall_metric:recall_metric:65 - 检索到指标信息：['GMV', 'AOV']
+2026-08-22 00:08:21.741 | INFO     | request_id - 4871e640-6558-4974-9553-626753c61d98 | app.agent.nodes.merge_retrieved_info:merge_retrieved_info:143 - 合并后的表信息：['dim_date', 'fact_order', 'dim_product', 'dim_region']
+2026-08-22 00:08:21.742 | INFO     | request_id - 4871e640-6558-4974-9553-626753c61d98 | app.agent.nodes.merge_retrieved_info:merge_retrieved_info:146 - 合并后的指标信息：['GMV', 'AOV']
+2026-08-22 00:08:22.042 | INFO     | request_id - 4871e640-6558-4974-9553-626753c61d98 | app.agent.nodes.filter_metric:filter_metric:54 - 过滤后的指标信息：['GMV']
+2026-08-22 00:08:22.533 | INFO     | request_id - 4871e640-6558-4974-9553-626753c61d98 | app.agent.nodes.filter_table:filter_table:60 - 过滤后的表信息：['dim_date', 'fact_order', 'dim_product']
+2026-08-22 00:08:22.536 | INFO     | request_id - 4871e640-6558-4974-9553-626753c61d98 | app.agent.nodes.add_extra_context:add_extra_context:36 - 数据库信息：{'dialect': 'mysql', 'version': '8.0.46'}
+2026-08-22 00:08:22.536 | INFO     | request_id - 4871e640-6558-4974-9553-626753c61d98 | app.agent.nodes.add_extra_context:add_extra_context:37 - 日期信息：{'date': '2026-08-22', 'weekday': 'Saturday', 'quarter': 'Q3'}
+2026-08-22 00:08:24.022 | INFO     | request_id - 4871e640-6558-4974-9553-626753c61d98 | app.agent.nodes.generate_sql:generate_sql:63 - 生成的SQL：
+SELECT dim_product.category AS 商品类别, SUM(fact_order.order_quantity) AS 销量, SUM(fact_order.order_amount) AS 销售额 FROM fact_order JOIN dim_date ON fact_order.date_id = dim_date.date_id JOIN dim_product ON fact_order.product_id = dim_product.category WHERE dim_date.month = 3 AND dim_date.date_id BETWEEN '2025-03-01' AND '2025-03-31' GROUP BY dim_product.category
+2026-08-22 00:08:24.029 | INFO     | request_id - 4871e640-6558-4974-9553-626753c61d98 | app.agent.nodes.validate_sql:validate_sql:34 - SQL语法正确
+2026-08-22 00:08:24.033 | INFO     | request_id - 4871e640-6558-4974-9553-626753c61d98 | app.agent.nodes.run_sql:run_sql:29 - SQL执行结果：[]
+2026-08-22 00:10:35.249 | INFO     | request_id - 82550917-04b8-4376-bf73-08ceb8eb4fc7 | app.agent.nodes.extract_keywords:extract_keywords:50 - 抽取关键词成功: ['统计 2025 年 3 月各商品品类的销量和销售额', '销售额', '商品', '品类', '统计', '销量']
+2026-08-22 00:10:39.080 | INFO     | request_id - 82550917-04b8-4376-bf73-08ceb8eb4fc7 | app.agent.nodes.recall_metric:recall_metric:65 - 检索到指标信息：['GMV', 'AOV']
+2026-08-22 00:10:45.254 | INFO     | request_id - 82550917-04b8-4376-bf73-08ceb8eb4fc7 | app.agent.nodes.recall_value:recall_value:63 - 检索到字段取值：[]
+2026-08-22 00:10:45.280 | INFO     | request_id - 82550917-04b8-4376-bf73-08ceb8eb4fc7 | app.agent.nodes.merge_retrieved_info:merge_retrieved_info:143 - 合并后的表信息：['dim_product', 'fact_order', 'dim_date', 'dim_region']
+2026-08-22 00:10:45.280 | INFO     | request_id - 82550917-04b8-4376-bf73-08ceb8eb4fc7 | app.agent.nodes.merge_retrieved_info:merge_retrieved_info:146 - 合并后的指标信息：['GMV', 'AOV']
+2026-08-22 00:10:47.224 | INFO     | request_id - 82550917-04b8-4376-bf73-08ceb8eb4fc7 | app.agent.nodes.filter_metric:filter_metric:54 - 过滤后的指标信息：['GMV']
+2026-08-22 00:10:49.152 | INFO     | request_id - 82550917-04b8-4376-bf73-08ceb8eb4fc7 | app.agent.nodes.filter_table:filter_table:60 - 过滤后的表信息：['dim_product', 'fact_order']
+2026-08-22 00:10:49.163 | INFO     | request_id - 82550917-04b8-4376-bf73-08ceb8eb4fc7 | app.agent.nodes.add_extra_context:add_extra_context:36 - 数据库信息：{'dialect': 'mysql', 'version': '8.0.46'}
+2026-08-22 00:10:49.163 | INFO     | request_id - 82550917-04b8-4376-bf73-08ceb8eb4fc7 | app.agent.nodes.add_extra_context:add_extra_context:37 - 日期信息：{'date': '2026-08-22', 'weekday': 'Saturday', 'quarter': 'Q3'}
+2026-08-22 00:11:00.337 | INFO     | request_id - 82550917-04b8-4376-bf73-08ceb8eb4fc7 | app.agent.nodes.generate_sql:generate_sql:63 - 生成的SQL：SELECT d.category AS 品类, SUM(o.order_quantity) AS 销量, SUM(o.order_amount) AS 销售额 FROM fact_order o JOIN dim_product d ON o.product_id = d.product_id WHERE o.date_id >= 20250301 AND o.date_id < 20250401 GROUP BY d.category
+2026-08-22 00:11:00.341 | INFO     | request_id - 82550917-04b8-4376-bf73-08ceb8eb4fc7 | app.agent.nodes.validate_sql:validate_sql:34 - SQL语法正确
+2026-08-22 00:11:00.343 | INFO     | request_id - 82550917-04b8-4376-bf73-08ceb8eb4fc7 | app.agent.nodes.run_sql:run_sql:29 - SQL执行结果：[]
+2026-08-22 00:11:07.007 | INFO     | request_id - 9882209e-b818-41eb-9c34-58d809e2c9a8 | app.agent.nodes.extract_keywords:extract_keywords:50 - 抽取关键词成功: ['统计 2025 年第一季度各大区的 GMV，并按 GMV 从高到低排序', '排序', '大区', 'GMV', '第一季度', '统计']
+2026-08-22 00:11:10.327 | INFO     | request_id - 9882209e-b818-41eb-9c34-58d809e2c9a8 | app.agent.nodes.recall_metric:recall_metric:65 - 检索到指标信息：['GMV', 'AOV']
+2026-08-22 00:11:14.608 | INFO     | request_id - 9882209e-b818-41eb-9c34-58d809e2c9a8 | app.agent.nodes.recall_value:recall_value:63 - 检索到字段取值：[]
+2026-08-22 00:11:14.618 | INFO     | request_id - 9882209e-b818-41eb-9c34-58d809e2c9a8 | app.agent.nodes.merge_retrieved_info:merge_retrieved_info:143 - 合并后的表信息：['dim_product', 'fact_order', 'dim_date', 'dim_region']
+2026-08-22 00:11:14.618 | INFO     | request_id - 9882209e-b818-41eb-9c34-58d809e2c9a8 | app.agent.nodes.merge_retrieved_info:merge_retrieved_info:146 - 合并后的指标信息：['GMV', 'AOV']
+2026-08-22 00:11:16.114 | INFO     | request_id - 9882209e-b818-41eb-9c34-58d809e2c9a8 | app.agent.nodes.filter_metric:filter_metric:54 - 过滤后的指标信息：['GMV']
+2026-08-22 00:11:23.759 | INFO     | request_id - 9882209e-b818-41eb-9c34-58d809e2c9a8 | app.agent.nodes.filter_table:filter_table:60 - 过滤后的表信息：['fact_order', 'dim_date', 'dim_region']
+2026-08-22 00:11:23.762 | INFO     | request_id - 9882209e-b818-41eb-9c34-58d809e2c9a8 | app.agent.nodes.add_extra_context:add_extra_context:36 - 数据库信息：{'dialect': 'mysql', 'version': '8.0.46'}
+2026-08-22 00:11:23.762 | INFO     | request_id - 9882209e-b818-41eb-9c34-58d809e2c9a8 | app.agent.nodes.add_extra_context:add_extra_context:37 - 日期信息：{'date': '2026-08-22', 'weekday': 'Saturday', 'quarter': 'Q3'}
+2026-08-22 00:11:31.316 | INFO     | request_id - 9882209e-b818-41eb-9c34-58d809e2c9a8 | app.agent.nodes.generate_sql:generate_sql:63 - 生成的SQL：SELECT r.region_name AS 大区, SUM(f.order_amount) AS GMV
+FROM fact_order f
+JOIN dim_region r ON f.region_id = r.region_id
+WHERE f.date_id BETWEEN 20250101 AND 20250331
+GROUP BY r.region_name
+ORDER BY GMV DESC
+2026-08-22 00:11:31.319 | INFO     | request_id - 9882209e-b818-41eb-9c34-58d809e2c9a8 | app.agent.nodes.validate_sql:validate_sql:34 - SQL语法正确
+2026-08-22 00:11:31.322 | INFO     | request_id - 9882209e-b818-41eb-9c34-58d809e2c9a8 | app.agent.nodes.run_sql:run_sql:29 - SQL执行结果：[]
+2026-08-22 21:25:02.330 | INFO     | request_id - 66f7587e-78bc-4d50-8410-3363a5683df0 | app.agent.nodes.extract_keywords:extract_keywords:50 - 抽取关键词成功: ['统计', '商品', '销售额', '统计 2025 年 3 月各商品品类的销量和销售额', '销量', '品类']
+2026-08-22 21:25:02.725 | ERROR    | request_id - 66f7587e-78bc-4d50-8410-3363a5683df0 | app.agent.nodes.recall_value:recall_value:67 - 召回字段取值 failed: Error code: 401 - {'code': 30014, 'data': None, 'message': 'Token is invalid.'}
+2026-08-22 21:25:13.407 | INFO     | request_id - 367347f0-29e5-4f37-9e0b-35c1e618075e | app.agent.nodes.extract_keywords:extract_keywords:50 - 抽取关键词成功: ['排序', '统计', 'GMV', '第一季度', '大区', '统计 2025 年第一季度各大区的 GMV，并按 GMV 从高到低排序']
+2026-08-22 21:25:13.544 | ERROR    | request_id - 367347f0-29e5-4f37-9e0b-35c1e618075e | app.agent.nodes.recall_metric:recall_metric:69 - 召回指标信息 failed: Error code: 401 - {'code': 30014, 'data': None, 'message': 'Token is invalid.'}
+2026-08-22 21:26:33.085 | INFO     | request_id - d9d89996-99db-4b21-a19f-aa677b49230e | app.agent.nodes.extract_keywords:extract_keywords:50 - 抽取关键词成功: ['商品', '统计 2025 年 3 月各商品品类的销量和销售额', '统计', '销量', '销售额', '品类']
+2026-08-22 21:26:46.974 | INFO     | request_id - d9d89996-99db-4b21-a19f-aa677b49230e | app.agent.nodes.recall_metric:recall_metric:65 - 检索到指标信息：['GMV', 'AOV']
+2026-08-22 21:26:47.971 | INFO     | request_id - d9d89996-99db-4b21-a19f-aa677b49230e | app.agent.nodes.recall_value:recall_value:63 - 检索到字段取值：[]
+2026-08-22 21:27:32.889 | INFO     | request_id - d9d89996-99db-4b21-a19f-aa677b49230e | app.agent.nodes.merge_retrieved_info:merge_retrieved_info:143 - 合并后的表信息：['dim_product', 'fact_order', 'dim_date', 'dim_region']
+2026-08-22 21:27:32.889 | INFO     | request_id - d9d89996-99db-4b21-a19f-aa677b49230e | app.agent.nodes.merge_retrieved_info:merge_retrieved_info:146 - 合并后的指标信息：['GMV', 'AOV']
+2026-08-22 21:28:02.079 | INFO     | request_id - d9d89996-99db-4b21-a19f-aa677b49230e | app.agent.nodes.filter_table:filter_table:60 - 过滤后的表信息：['dim_product', 'fact_order', 'dim_date']
+2026-08-22 21:33:21.806 | INFO     | request_id - def1863b-5f8f-433a-a6a8-352c871639f4 | app.agent.nodes.extract_keywords:extract_keywords:50 - 抽取关键词成功: ['GMV', '第一季度', '大区', '统计 2025 年第一季度各大区的 GMV，并按 GMV 从高到低排序', '排序', '统计']
+2026-08-22 21:33:38.534 | INFO     | request_id - def1863b-5f8f-433a-a6a8-352c871639f4 | app.agent.nodes.recall_value:recall_value:63 - 检索到字段取值：[]
+2026-08-22 21:33:46.162 | INFO     | request_id - def1863b-5f8f-433a-a6a8-352c871639f4 | app.agent.nodes.recall_metric:recall_metric:65 - 检索到指标信息：['GMV', 'AOV']
+2026-08-22 21:34:23.319 | INFO     | request_id - def1863b-5f8f-433a-a6a8-352c871639f4 | app.agent.nodes.merge_retrieved_info:merge_retrieved_info:143 - 合并后的表信息：['dim_date', 'fact_order', 'dim_region', 'dim_customer', 'dim_product']
+2026-08-22 21:34:23.320 | INFO     | request_id - def1863b-5f8f-433a-a6a8-352c871639f4 | app.agent.nodes.merge_retrieved_info:merge_retrieved_info:146 - 合并后的指标信息：['GMV', 'AOV']
+2026-08-22 21:34:42.656 | INFO     | request_id - def1863b-5f8f-433a-a6a8-352c871639f4 | app.agent.nodes.filter_table:filter_table:60 - 过滤后的表信息：['dim_date', 'fact_order', 'dim_region']
+2026-08-22 21:34:47.794 | INFO     | request_id - def1863b-5f8f-433a-a6a8-352c871639f4 | app.agent.nodes.filter_metric:filter_metric:54 - 过滤后的指标信息：['GMV']
+2026-08-22 21:34:47.805 | INFO     | request_id - def1863b-5f8f-433a-a6a8-352c871639f4 | app.agent.nodes.add_extra_context:add_extra_context:36 - 数据库信息：{'dialect': 'mysql', 'version': '8.0.46'}
+2026-08-22 21:34:47.805 | INFO     | request_id - def1863b-5f8f-433a-a6a8-352c871639f4 | app.agent.nodes.add_extra_context:add_extra_context:37 - 日期信息：{'date': '2026-08-22', 'weekday': 'Saturday', 'quarter': 'Q3'}
+2026-08-22 21:42:01.253 | INFO     | request_id - 08bdd4e4-34b7-4a97-a57f-d531e13ff50f | app.agent.nodes.extract_keywords:extract_keywords:50 - 抽取关键词成功: ['统计 2025 年第一季度各大区的 GMV，并按 GMV 从高到低排序', '统计', '大区', 'GMV', '第一季度', '排序']
+2026-08-22 21:44:36.775 | INFO     | request_id - 16a04399-afbd-4104-ae70-589448c49087 | app.agent.nodes.extract_keywords:extract_keywords:50 - 抽取关键词成功: ['第一季度', '大区', '统计', '统计 2025 年第一季度各大区的 GMV，并按 GMV 从高到低排序', '排序', 'GMV']
+2026-08-22 21:44:45.833 | INFO     | request_id - 16a04399-afbd-4104-ae70-589448c49087 | app.agent.nodes.recall_metric:recall_metric:65 - 检索到指标信息：['GMV', 'AOV']
+2026-08-22 21:45:04.060 | INFO     | request_id - 16a04399-afbd-4104-ae70-589448c49087 | app.agent.nodes.recall_value:recall_value:63 - 检索到字段取值：[]
+2026-08-22 21:45:04.084 | INFO     | request_id - 16a04399-afbd-4104-ae70-589448c49087 | app.agent.nodes.merge_retrieved_info:merge_retrieved_info:143 - 合并后的表信息：['dim_date', 'fact_order', 'dim_region', 'dim_product']
+2026-08-22 21:45:04.084 | INFO     | request_id - 16a04399-afbd-4104-ae70-589448c49087 | app.agent.nodes.merge_retrieved_info:merge_retrieved_info:146 - 合并后的指标信息：['GMV', 'AOV']
+2026-08-22 21:45:06.376 | INFO     | request_id - 16a04399-afbd-4104-ae70-589448c49087 | app.agent.nodes.filter_metric:filter_metric:54 - 过滤后的指标信息：['GMV']
+2026-08-22 21:45:44.570 | INFO     | request_id - 2f84d366-c1e4-4c2f-9b64-1d6ad70a36ac | app.agent.nodes.extract_keywords:extract_keywords:50 - 抽取关键词成功: ['第一季度', '最高', '华东地区', '查询华东地区 2025 年第一季度销售额最高的前 5 个商品', '查询', '销售额', '商品']
+2026-08-22 21:45:51.767 | INFO     | request_id - 16a04399-afbd-4104-ae70-589448c49087 | app.agent.nodes.filter_table:filter_table:60 - 过滤后的表信息：['fact_order', 'dim_region']
+2026-08-22 21:45:52.917 | INFO     | request_id - 2f84d366-c1e4-4c2f-9b64-1d6ad70a36ac | app.agent.nodes.recall_metric:recall_metric:65 - 检索到指标信息：['GMV', 'AOV']
+2026-08-22 21:46:22.845 | INFO     | request_id - b83ad799-3342-4a87-b884-56738cc7be0c | app.agent.nodes.extract_keywords:extract_keywords:50 - 抽取关键词成功: ['会员', '按会员等级统计 2025 年第一季度的订单数和销售额', '订单数', '统计', '第一季度', '销售额']
+2026-08-22 21:46:37.388 | INFO     | request_id - b83ad799-3342-4a87-b884-56738cc7be0c | app.agent.nodes.recall_value:recall_value:63 - 检索到字段取值：[]
+2026-08-22 21:46:39.176 | INFO     | request_id - b83ad799-3342-4a87-b884-56738cc7be0c | app.agent.nodes.recall_metric:recall_metric:65 - 检索到指标信息：['GMV', 'AOV']
+2026-08-22 21:47:29.662 | INFO     | request_id - a5e7f39f-d6e0-40a8-b32f-6173a9cd1d94 | app.agent.nodes.extract_keywords:extract_keywords:50 - 抽取关键词成功: ['销售额', '统计', '订单数', '会员', '按会员等级统计 2025 年第一季度的订单数和销售额', '第一季度']
+2026-08-22 21:47:31.260 | INFO     | request_id - a5e7f39f-d6e0-40a8-b32f-6173a9cd1d94 | app.agent.nodes.recall_value:recall_value:63 - 检索到字段取值：[]
+2026-08-22 21:47:32.487 | INFO     | request_id - a5e7f39f-d6e0-40a8-b32f-6173a9cd1d94 | app.agent.nodes.recall_metric:recall_metric:65 - 检索到指标信息：['GMV', 'AOV']
+2026-08-22 21:47:32.611 | INFO     | request_id - a5e7f39f-d6e0-40a8-b32f-6173a9cd1d94 | app.agent.nodes.merge_retrieved_info:merge_retrieved_info:143 - 合并后的表信息：['fact_order', 'dim_region', 'dim_customer', 'dim_date']
+2026-08-22 21:47:32.612 | INFO     | request_id - a5e7f39f-d6e0-40a8-b32f-6173a9cd1d94 | app.agent.nodes.merge_retrieved_info:merge_retrieved_info:146 - 合并后的指标信息：['GMV', 'AOV']
+2026-08-22 21:47:33.400 | INFO     | request_id - a5e7f39f-d6e0-40a8-b32f-6173a9cd1d94 | app.agent.nodes.filter_metric:filter_metric:54 - 过滤后的指标信息：['GMV']
+2026-08-22 21:47:33.408 | INFO     | request_id - a5e7f39f-d6e0-40a8-b32f-6173a9cd1d94 | app.agent.nodes.filter_table:filter_table:60 - 过滤后的表信息：['fact_order', 'dim_customer', 'dim_date']
+2026-08-22 21:47:33.418 | INFO     | request_id - a5e7f39f-d6e0-40a8-b32f-6173a9cd1d94 | app.agent.nodes.add_extra_context:add_extra_context:36 - 数据库信息：{'dialect': 'mysql', 'version': '8.0.46'}
+2026-08-22 21:47:33.418 | INFO     | request_id - a5e7f39f-d6e0-40a8-b32f-6173a9cd1d94 | app.agent.nodes.add_extra_context:add_extra_context:37 - 日期信息：{'date': '2026-08-22', 'weekday': 'Saturday', 'quarter': 'Q3'}
+2026-08-22 21:47:34.582 | INFO     | request_id - a5e7f39f-d6e0-40a8-b32f-6173a9cd1d94 | app.agent.nodes.generate_sql:generate_sql:63 - 生成的SQL：
+SELECT dim_customer.member_level AS 会员等级, SUM(fact_order.order_quantity) AS 订单数, SUM(fact_order.order_amount) AS 销售额 FROM fact_order JOIN dim_customer ON fact_order.customer_id = dim_customer.customer_id JOIN dim_date ON fact_order.date_id = dim_date.date_id WHERE dim_date.quarter = 'Q1' AND YEAR(fact_order.date_id) = 2025 GROUP BY dim_customer.member_level
+2026-08-22 21:47:34.628 | INFO     | request_id - a5e7f39f-d6e0-40a8-b32f-6173a9cd1d94 | app.agent.nodes.validate_sql:validate_sql:34 - SQL语法正确
+2026-08-22 21:47:34.633 | INFO     | request_id - a5e7f39f-d6e0-40a8-b32f-6173a9cd1d94 | app.agent.nodes.run_sql:run_sql:29 - SQL执行结果：[]
+2026-08-22 21:47:41.746 | INFO     | request_id - 3359a358-29ba-4dac-ac67-a0bd9635c13c | app.agent.nodes.extract_keywords:extract_keywords:50 - 抽取关键词成功: ['统计', 'GMV', '大区', '第一季度', '排序', '统计 2025 年第一季度各大区的 GMV，并按 GMV 从高到低排序']
+2026-08-22 21:47:42.356 | INFO     | request_id - 3359a358-29ba-4dac-ac67-a0bd9635c13c | app.agent.nodes.recall_value:recall_value:63 - 检索到字段取值：[]
+2026-08-22 21:47:43.750 | INFO     | request_id - 3359a358-29ba-4dac-ac67-a0bd9635c13c | app.agent.nodes.recall_metric:recall_metric:65 - 检索到指标信息：['GMV', 'AOV']
+2026-08-22 21:47:43.896 | INFO     | request_id - 3359a358-29ba-4dac-ac67-a0bd9635c13c | app.agent.nodes.merge_retrieved_info:merge_retrieved_info:143 - 合并后的表信息：['fact_order', 'dim_date', 'dim_region', 'dim_product']
+2026-08-22 21:47:43.896 | INFO     | request_id - 3359a358-29ba-4dac-ac67-a0bd9635c13c | app.agent.nodes.merge_retrieved_info:merge_retrieved_info:146 - 合并后的指标信息：['GMV', 'AOV']
+2026-08-22 21:47:44.277 | INFO     | request_id - 3359a358-29ba-4dac-ac67-a0bd9635c13c | app.agent.nodes.filter_metric:filter_metric:54 - 过滤后的指标信息：['GMV']
+2026-08-22 21:47:44.445 | INFO     | request_id - 3359a358-29ba-4dac-ac67-a0bd9635c13c | app.agent.nodes.filter_table:filter_table:60 - 过滤后的表信息：['fact_order', 'dim_date', 'dim_region']
+2026-08-22 21:47:44.448 | INFO     | request_id - 3359a358-29ba-4dac-ac67-a0bd9635c13c | app.agent.nodes.add_extra_context:add_extra_context:36 - 数据库信息：{'dialect': 'mysql', 'version': '8.0.46'}
+2026-08-22 21:47:44.449 | INFO     | request_id - 3359a358-29ba-4dac-ac67-a0bd9635c13c | app.agent.nodes.add_extra_context:add_extra_context:37 - 日期信息：{'date': '2026-08-22', 'weekday': 'Saturday', 'quarter': 'Q3'}
+2026-08-22 21:47:45.617 | INFO     | request_id - 3359a358-29ba-4dac-ac67-a0bd9635c13c | app.agent.nodes.generate_sql:generate_sql:63 - 生成的SQL：
+SELECT dim_region.region_name AS 大区, SUM(fact_order.order_amount) AS GMV
+FROM fact_order
+JOIN dim_date ON fact_order.date_id = dim_date.date_id
+JOIN dim_region ON fact_order.region_id = dim_region.region_id
+WHERE dim_date.quarter = 'Q1' AND dim_date.date_id >= 20250101 AND dim_date.date_id < 20250401
+GROUP BY dim_region.region_name
+ORDER BY GMV DESC
+2026-08-22 21:47:45.625 | INFO     | request_id - 3359a358-29ba-4dac-ac67-a0bd9635c13c | app.agent.nodes.validate_sql:validate_sql:34 - SQL语法正确
+2026-08-22 21:47:45.627 | INFO     | request_id - 3359a358-29ba-4dac-ac67-a0bd9635c13c | app.agent.nodes.run_sql:run_sql:29 - SQL执行结果：[]
+2026-08-22 21:48:18.842 | INFO     | request_id - b737a94c-8ad9-4150-9aee-1e21703a189d | app.agent.nodes.extract_keywords:extract_keywords:50 - 抽取关键词成功: ['大区', '第一季度', '排序', 'GMV', '统计 2025 年第一季度各大区的 GMV，并按 GMV 从高到低排序', '统计']
+2026-08-22 21:48:28.753 | INFO     | request_id - b737a94c-8ad9-4150-9aee-1e21703a189d | app.agent.nodes.recall_metric:recall_metric:65 - 检索到指标信息：['GMV', 'AOV']
+2026-08-22 21:48:31.294 | INFO     | request_id - b737a94c-8ad9-4150-9aee-1e21703a189d | app.agent.nodes.recall_value:recall_value:63 - 检索到字段取值：[]
+2026-08-22 21:48:53.809 | INFO     | request_id - b737a94c-8ad9-4150-9aee-1e21703a189d | app.agent.nodes.merge_retrieved_info:merge_retrieved_info:143 - 合并后的表信息：['dim_region', 'fact_order', 'dim_date', 'dim_product', 'dim_customer']
+2026-08-22 21:48:53.810 | INFO     | request_id - b737a94c-8ad9-4150-9aee-1e21703a189d | app.agent.nodes.merge_retrieved_info:merge_retrieved_info:146 - 合并后的指标信息：['GMV', 'AOV']
+2026-08-22 21:49:00.606 | INFO     | request_id - b737a94c-8ad9-4150-9aee-1e21703a189d | app.agent.nodes.filter_metric:filter_metric:54 - 过滤后的指标信息：['GMV']
+2026-08-22 21:49:41.935 | INFO     | request_id - b737a94c-8ad9-4150-9aee-1e21703a189d | app.agent.nodes.filter_table:filter_table:60 - 过滤后的表信息：['dim_region', 'fact_order', 'dim_date']
+2026-08-22 21:49:41.947 | INFO     | request_id - b737a94c-8ad9-4150-9aee-1e21703a189d | app.agent.nodes.add_extra_context:add_extra_context:36 - 数据库信息：{'dialect': 'mysql', 'version': '8.0.46'}
+2026-08-22 21:49:41.947 | INFO     | request_id - b737a94c-8ad9-4150-9aee-1e21703a189d | app.agent.nodes.add_extra_context:add_extra_context:37 - 日期信息：{'date': '2026-08-22', 'weekday': 'Saturday', 'quarter': 'Q3'}
+2026-08-22 21:49:58.280 | INFO     | request_id - b737a94c-8ad9-4150-9aee-1e21703a189d | app.agent.nodes.generate_sql:generate_sql:63 - 生成的SQL：
+SELECT 
+  dim_region.region_name AS 大区,
+  SUM(fact_order.order_amount) AS GMV
+FROM fact_order
+JOIN dim_region ON fact_order.region_id = dim_region.region_id
+JOIN dim_date ON fact_order.date_id = dim_date.date_id
+WHERE dim_date.year = 2025
+  AND dim_date.quarter = 'Q1'
+GROUP BY dim_region.region_name
+ORDER BY GMV DESC;
+2026-08-22 21:49:58.284 | INFO     | request_id - b737a94c-8ad9-4150-9aee-1e21703a189d | app.agent.nodes.validate_sql:validate_sql:34 - SQL语法正确
+2026-08-22 21:49:58.286 | INFO     | request_id - b737a94c-8ad9-4150-9aee-1e21703a189d | app.agent.nodes.run_sql:run_sql:29 - SQL执行结果：[]
+2026-08-22 21:50:14.030 | INFO     | request_id - 33407227-38d6-46d1-8e6f-e257f365e111 | app.agent.nodes.extract_keywords:extract_keywords:50 - 抽取关键词成功: ['订单数', '第一季度', '按会员等级统计 2025 年第一季度的订单数和销售额', '销售额', '会员', '统计']
+2026-08-22 21:50:26.835 | INFO     | request_id - 33407227-38d6-46d1-8e6f-e257f365e111 | app.agent.nodes.recall_metric:recall_metric:65 - 检索到指标信息：['GMV', 'AOV']
+2026-08-22 21:50:40.396 | INFO     | request_id - 33407227-38d6-46d1-8e6f-e257f365e111 | app.agent.nodes.recall_value:recall_value:63 - 检索到字段取值：[]
+2026-08-22 21:52:45.420 | INFO     | request_id - 33407227-38d6-46d1-8e6f-e257f365e111 | app.agent.nodes.merge_retrieved_info:merge_retrieved_info:143 - 合并后的表信息：['dim_customer', 'fact_order', 'dim_region', 'dim_date']
+2026-08-22 21:52:45.420 | INFO     | request_id - 33407227-38d6-46d1-8e6f-e257f365e111 | app.agent.nodes.merge_retrieved_info:merge_retrieved_info:146 - 合并后的指标信息：['GMV', 'AOV']
+2026-08-22 21:53:23.513 | INFO     | request_id - 33407227-38d6-46d1-8e6f-e257f365e111 | app.agent.nodes.filter_metric:filter_metric:54 - 过滤后的指标信息：[]
+2026-08-22 21:55:22.017 | INFO     | request_id - 33407227-38d6-46d1-8e6f-e257f365e111 | app.agent.nodes.filter_table:filter_table:60 - 过滤后的表信息：['dim_customer', 'fact_order', 'dim_date']
+2026-08-22 21:55:22.021 | INFO     | request_id - 33407227-38d6-46d1-8e6f-e257f365e111 | app.agent.nodes.add_extra_context:add_extra_context:36 - 数据库信息：{'dialect': 'mysql', 'version': '8.0.46'}
+2026-08-22 21:55:22.022 | INFO     | request_id - 33407227-38d6-46d1-8e6f-e257f365e111 | app.agent.nodes.add_extra_context:add_extra_context:37 - 日期信息：{'date': '2026-08-22', 'weekday': 'Saturday', 'quarter': 'Q3'}
+2026-08-22 21:56:24.588 | INFO     | request_id - 33407227-38d6-46d1-8e6f-e257f365e111 | app.agent.nodes.generate_sql:generate_sql:63 - 生成的SQL：
+SELECT 
+    dc.member_level AS 会员等级,
+    COUNT(fo.order_quantity) AS 订单数,
+    SUM(fo.order_amount) AS 销售额
+FROM 
+    fact_order fo
+INNER JOIN 
+    dim_customer dc ON fo.customer_id = dc.customer_id
+INNER JOIN 
+    dim_date dd ON fo.date_id = dd.date_id
+WHERE 
+    quarter = 'Q1' AND 
+    (CONCAT('0', dd.date_id) >= '2025-01-01' AND CONCAT('0', dd.date_id) <= '2025-03-31')
+GROUP BY 
+    dc.member_level;
+2026-08-22 21:56:24.593 | INFO     | request_id - 33407227-38d6-46d1-8e6f-e257f365e111 | app.agent.nodes.validate_sql:validate_sql:34 - SQL语法正确
+2026-08-22 21:56:24.596 | INFO     | request_id - 33407227-38d6-46d1-8e6f-e257f365e111 | app.agent.nodes.run_sql:run_sql:29 - SQL执行结果：[]
+2026-08-22 22:05:32.339 | INFO     | request_id - 1 | app.services.meta_knowledge_service:build:272 - 保存表信息和字段信息到 Meta MySQL
+2026-08-22 22:05:38.324 | INFO     | request_id - 1 | app.services.meta_knowledge_service:build:275 - 为字段信息建立向量索引
+2026-08-22 22:05:38.386 | INFO     | request_id - 1 | app.services.meta_knowledge_service:build:278 - 为字段取值建立全文索引
+2026-08-22 22:05:38.398 | INFO     | request_id - 1 | app.services.meta_knowledge_service:build:284 - 保存指标信息到数据库成功
+2026-08-22 22:05:39.177 | INFO     | request_id - 1 | app.services.meta_knowledge_service:build:288 - 为指标信息建立向量索引成功
+2026-08-22 22:06:11.115 | INFO     | request_id - 70095d0e-126d-497a-a4d0-5a368d0e2c3d | app.agent.nodes.extract_keywords:extract_keywords:50 - 抽取关键词成功: ['销售额', '品类', '商品', '销量', '统计 2025 年 3 月各商品品类的销量和销售额', '统计']
+2026-08-22 22:06:26.843 | INFO     | request_id - 70095d0e-126d-497a-a4d0-5a368d0e2c3d | app.agent.nodes.recall_metric:recall_metric:65 - 检索到指标信息：['GMV', 'AOV']
+2026-08-22 22:06:33.777 | INFO     | request_id - 70095d0e-126d-497a-a4d0-5a368d0e2c3d | app.agent.nodes.recall_value:recall_value:63 - 检索到字段取值：[]
+2026-08-22 22:07:02.815 | INFO     | request_id - 70095d0e-126d-497a-a4d0-5a368d0e2c3d | app.agent.nodes.merge_retrieved_info:merge_retrieved_info:143 - 合并后的表信息：['dim_date', 'fact_order', 'dim_product']
+2026-08-22 22:07:02.816 | INFO     | request_id - 70095d0e-126d-497a-a4d0-5a368d0e2c3d | app.agent.nodes.merge_retrieved_info:merge_retrieved_info:146 - 合并后的指标信息：['GMV', 'AOV']
+2026-08-22 22:07:26.643 | INFO     | request_id - 70095d0e-126d-497a-a4d0-5a368d0e2c3d | app.agent.nodes.filter_table:filter_table:60 - 过滤后的表信息：['dim_date', 'fact_order', 'dim_product']
+2026-08-22 22:07:47.324 | INFO     | request_id - 70095d0e-126d-497a-a4d0-5a368d0e2c3d | app.agent.nodes.filter_metric:filter_metric:54 - 过滤后的指标信息：[]
+2026-08-22 22:07:47.333 | INFO     | request_id - 70095d0e-126d-497a-a4d0-5a368d0e2c3d | app.agent.nodes.add_extra_context:add_extra_context:36 - 数据库信息：{'dialect': 'mysql', 'version': '8.0.46'}
+2026-08-22 22:07:47.334 | INFO     | request_id - 70095d0e-126d-497a-a4d0-5a368d0e2c3d | app.agent.nodes.add_extra_context:add_extra_context:37 - 日期信息：{'date': '2026-08-22', 'weekday': 'Saturday', 'quarter': 'Q3'}
+2026-08-22 22:16:48.351 | INFO     | request_id - 0f755bb1-164c-4ff8-8e66-bb61641fcb56 | app.agent.nodes.extract_keywords:extract_keywords:50 - 抽取关键词成功: ['大区', '第一季度', '统计 2025 年第一季度各大区的 GMV，并按 GMV 从高到低排序', 'GMV', '排序', '统计']
+2026-08-22 22:16:58.835 | INFO     | request_id - 0f755bb1-164c-4ff8-8e66-bb61641fcb56 | app.agent.nodes.recall_value:recall_value:63 - 检索到字段取值：[]
+2026-08-22 22:17:04.336 | INFO     | request_id - 0f755bb1-164c-4ff8-8e66-bb61641fcb56 | app.agent.nodes.recall_metric:recall_metric:65 - 检索到指标信息：['GMV', 'AOV']
+2026-08-22 22:17:16.697 | INFO     | request_id - 0f755bb1-164c-4ff8-8e66-bb61641fcb56 | app.agent.nodes.merge_retrieved_info:merge_retrieved_info:143 - 合并后的表信息：['dim_region', 'fact_order', 'dim_date', 'dim_customer', 'dim_product']
+2026-08-22 22:17:16.697 | INFO     | request_id - 0f755bb1-164c-4ff8-8e66-bb61641fcb56 | app.agent.nodes.merge_retrieved_info:merge_retrieved_info:146 - 合并后的指标信息：['GMV', 'AOV']
+2026-08-22 22:17:22.313 | INFO     | request_id - 0f755bb1-164c-4ff8-8e66-bb61641fcb56 | app.agent.nodes.filter_metric:filter_metric:54 - 过滤后的指标信息：['GMV']
+2026-08-22 22:21:00.877 | INFO     | request_id - 65099740-4fa4-4d71-b014-ecb1dcf5db0c | app.agent.nodes.extract_keywords:extract_keywords:50 - 抽取关键词成功: ['华东地区', '查询华东地区 2025 年第一季度销售额最高的前 5 个商品', '第一季度', '销售额', '查询', '商品', '最高']
+2026-08-22 22:21:09.450 | INFO     | request_id - 65099740-4fa4-4d71-b014-ecb1dcf5db0c | app.agent.nodes.recall_metric:recall_metric:65 - 检索到指标信息：['GMV', 'AOV']
+2026-08-22 22:21:33.365 | INFO     | request_id - 65099740-4fa4-4d71-b014-ecb1dcf5db0c | app.agent.nodes.recall_value:recall_value:63 - 检索到字段取值：['dim_region.region_name.华东']
+2026-08-22 22:21:49.034 | INFO     | request_id - 65099740-4fa4-4d71-b014-ecb1dcf5db0c | app.agent.nodes.merge_retrieved_info:merge_retrieved_info:143 - 合并后的表信息：['dim_region', 'dim_product', 'fact_order', 'dim_date']
+2026-08-22 22:21:49.035 | INFO     | request_id - 65099740-4fa4-4d71-b014-ecb1dcf5db0c | app.agent.nodes.merge_retrieved_info:merge_retrieved_info:146 - 合并后的指标信息：['GMV', 'AOV']
+2026-08-22 22:22:00.641 | INFO     | request_id - 65099740-4fa4-4d71-b014-ecb1dcf5db0c | app.agent.nodes.filter_metric:filter_metric:54 - 过滤后的指标信息：[]
+2026-08-22 22:22:53.515 | INFO     | request_id - 65099740-4fa4-4d71-b014-ecb1dcf5db0c | app.agent.nodes.filter_table:filter_table:60 - 过滤后的表信息：['dim_region', 'dim_product', 'fact_order', 'dim_date']
+2026-08-22 22:27:36.558 | INFO     | request_id - d871f96f-bba4-429b-b744-316ad9be3a7f | app.agent.nodes.extract_keywords:extract_keywords:50 - 抽取关键词成功: ['第一季度', '会员', '按会员等级统计 2025 年第一季度的订单数和销售额', '订单数', '统计', '销售额']
+2026-08-22 22:27:48.595 | INFO     | request_id - d871f96f-bba4-429b-b744-316ad9be3a7f | app.agent.nodes.recall_metric:recall_metric:65 - 检索到指标信息：['GMV', 'AOV']
+2026-08-22 22:28:06.980 | INFO     | request_id - d871f96f-bba4-429b-b744-316ad9be3a7f | app.agent.nodes.recall_value:recall_value:63 - 检索到字段取值：[]
+2026-08-22 22:30:13.140 | INFO     | request_id - d871f96f-bba4-429b-b744-316ad9be3a7f | app.agent.nodes.merge_retrieved_info:merge_retrieved_info:143 - 合并后的表信息：['dim_date', 'fact_order', 'dim_region', 'dim_customer']
+2026-08-22 22:30:13.141 | INFO     | request_id - d871f96f-bba4-429b-b744-316ad9be3a7f | app.agent.nodes.merge_retrieved_info:merge_retrieved_info:146 - 合并后的指标信息：['GMV', 'AOV']
+2026-08-22 22:30:46.401 | INFO     | request_id - d871f96f-bba4-429b-b744-316ad9be3a7f | app.agent.nodes.filter_table:filter_table:60 - 过滤后的表信息：['dim_date', 'fact_order', 'dim_customer']
+2026-08-22 22:30:59.074 | INFO     | request_id - d871f96f-bba4-429b-b744-316ad9be3a7f | app.agent.nodes.filter_metric:filter_metric:54 - 过滤后的指标信息：[]
+2026-08-22 22:30:59.084 | INFO     | request_id - d871f96f-bba4-429b-b744-316ad9be3a7f | app.agent.nodes.add_extra_context:add_extra_context:36 - 数据库信息：{'dialect': 'mysql', 'version': '8.0.46'}
+2026-08-22 22:30:59.085 | INFO     | request_id - d871f96f-bba4-429b-b744-316ad9be3a7f | app.agent.nodes.add_extra_context:add_extra_context:37 - 日期信息：{'date': '2026-08-22', 'weekday': 'Saturday', 'quarter': 'Q3'}
+2026-08-22 22:31:52.190 | INFO     | request_id - d871f96f-bba4-429b-b744-316ad9be3a7f | app.agent.nodes.generate_sql:generate_sql:63 - 生成的SQL：
+SELECT 
+  dim_customer.member_level AS 会员等级,
+  COUNT(fact_order.date_id) AS 订单数,
+  SUM(fact_order.order_amount) AS 销售额
+FROM 
+  fact_order
+JOIN 
+  dim_customer ON fact_order.customer_id = dim_customer.customer_id
+JOIN 
+  dim_date ON fact_order.date_id = dim_date.date_id
+WHERE 
+  dim_date.quarter = 'Q1' 
+  AND DATE_FORMAT(DATE(dim_date.date_id), '%Y') = '2025'
+2026-08-22 22:31:52.200 | INFO     | request_id - d871f96f-bba4-429b-b744-316ad9be3a7f | app.agent.nodes.validate_sql:validate_sql:38 - SQL语法错误：(asyncmy.errors.OperationalError) (1140, "In aggregated query without GROUP BY, expression #1 of SELECT list contains nonaggregated column 'dw.dim_customer.member_level'; this is incompatible with sql_mode=only_full_group_by")
+[SQL: explain 
+SELECT 
+  dim_customer.member_level AS 会员等级,
+  COUNT(fact_order.date_id) AS 订单数,
+  SUM(fact_order.order_amount) AS 销售额
+FROM 
+  fact_order
+JOIN 
+  dim_customer ON fact_order.customer_id = dim_customer.customer_id
+JOIN 
+  dim_date ON fact_order.date_id = dim_date.date_id
+WHERE 
+  dim_date.quarter = 'Q1' 
+  AND DATE_FORMAT(DATE(dim_date.date_id), '%%Y') = '2025']
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-08-22 22:32:02.681 | INFO     | request_id - d871f96f-bba4-429b-b744-316ad9be3a7f | app.agent.nodes.correct_sql:correct_sql:72 - 校正后的SQL：
+SELECT 
+  dim_customer.member_level AS 会员等级,
+  COUNT(fact_order.date_id) AS 订单数,
+  SUM(fact_order.order_amount) AS 销售额
+FROM 
+  fact_order
+JOIN 
+  dim_customer ON fact_order.customer_id = dim_customer.customer_id
+JOIN 
+  dim_date ON fact_order.date_id = dim_date.date_id
+WHERE 
+  dim_date.quarter = 'Q1' 
+  AND DATE_FORMAT(DATE(dim_date.date_id), '%Y') = '2025'
+GROUP BY 
+  dim_customer.member_level;
+2026-08-22 22:32:02.686 | INFO     | request_id - d871f96f-bba4-429b-b744-316ad9be3a7f | app.agent.nodes.run_sql:run_sql:29 - SQL执行结果：[{'会员等级': '黄金', '订单数': 34, '销售额': 100178.5}, {'会员等级': '铂金', '订单数': 25, '销售额': 57679.0}, {'会员等级': '青铜', '订单数': 26, '销售额': 50208.0}, {'会员等级': '白银', '订单数': 30, '销售额': 71094.0}]
+2026-08-22 23:32:12.249 | INFO     | request_id - be79739d-1dca-45b1-9d73-e1baec416b29 | app.agent.nodes.extract_keywords:extract_keywords:50 - 抽取关键词成功: ['第一季度', '商品', '销售额', '查询华东地区 2025 年第一季度销售额最高的前 5 个商品', '最高', '华东地区', '查询']
+2026-08-22 23:32:24.838 | INFO     | request_id - be79739d-1dca-45b1-9d73-e1baec416b29 | app.agent.nodes.recall_metric:recall_metric:65 - 检索到指标信息：['GMV', 'AOV']
+2026-08-22 23:32:36.443 | INFO     | request_id - be79739d-1dca-45b1-9d73-e1baec416b29 | app.agent.nodes.recall_value:recall_value:63 - 检索到字段取值：['dim_region.region_name.华东']
+2026-08-22 23:32:36.474 | INFO     | request_id - be79739d-1dca-45b1-9d73-e1baec416b29 | app.agent.nodes.merge_retrieved_info:merge_retrieved_info:143 - 合并后的表信息：['dim_date', 'dim_product', 'fact_order', 'dim_region']
+2026-08-22 23:32:36.474 | INFO     | request_id - be79739d-1dca-45b1-9d73-e1baec416b29 | app.agent.nodes.merge_retrieved_info:merge_retrieved_info:146 - 合并后的指标信息：['GMV', 'AOV']
+2026-08-22 23:32:52.006 | INFO     | request_id - be79739d-1dca-45b1-9d73-e1baec416b29 | app.agent.nodes.filter_metric:filter_metric:54 - 过滤后的指标信息：[]
+2026-08-22 23:34:18.381 | INFO     | request_id - be79739d-1dca-45b1-9d73-e1baec416b29 | app.agent.nodes.filter_table:filter_table:60 - 过滤后的表信息：['dim_date', 'dim_product', 'fact_order', 'dim_region']
+2026-08-22 23:34:18.402 | INFO     | request_id - be79739d-1dca-45b1-9d73-e1baec416b29 | app.agent.nodes.add_extra_context:add_extra_context:36 - 数据库信息：{'dialect': 'mysql', 'version': '8.0.46'}
+2026-08-22 23:34:18.402 | INFO     | request_id - be79739d-1dca-45b1-9d73-e1baec416b29 | app.agent.nodes.add_extra_context:add_extra_context:37 - 日期信息：{'date': '2026-08-22', 'weekday': 'Saturday', 'quarter': 'Q3'}
+2026-08-22 23:34:32.221 | INFO     | request_id - be79739d-1dca-45b1-9d73-e1baec416b29 | app.agent.nodes.generate_sql:generate_sql:63 - 生成的SQL：
+SELECT 
+    dim_product.product_name,
+    SUM(fact_order.order_amount) AS total_sales
+FROM 
+    fact_order
+JOIN 
+    dim_region ON fact_order.region_id = dim_region.region_id
+JOIN 
+    dim_product ON fact_order.product_id = dim_product.product_id
+JOIN 
+    dim_date ON fact_order.date_id = dim_date.date_id
+WHERE 
+    dim_region.region_name = '华东'
+    AND dim_date.year = 2025
+    AND dim_date.quarter = 'Q1'
+GROUP BY 
+    dim_product.product_id,
+    dim_product.product_name
+ORDER BY 
+    total_sales DESC
+LIMIT 5;
+2026-08-22 23:34:32.226 | INFO     | request_id - be79739d-1dca-45b1-9d73-e1baec416b29 | app.agent.nodes.validate_sql:validate_sql:34 - SQL语法正确
+2026-08-22 23:34:32.230 | INFO     | request_id - be79739d-1dca-45b1-9d73-e1baec416b29 | app.agent.nodes.run_sql:run_sql:29 - SQL执行结果：[{'product_name': 'Galaxy S24 Ultra', 'total_sales': 28497.0}, {'product_name': 'Mate 60 Pro', 'total_sales': 27996.0}, {'product_name': 'iPhone 15 Pro', 'total_sales': 17998.0}, {'product_name': '戴森 V15 吸尘器', 'total_sales': 10998.0}, {'product_name': '美的空调 KFR-35GW', 'total_sales': 6400.0}]

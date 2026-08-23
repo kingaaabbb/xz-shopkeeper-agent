@@ -1,0 +1,111 @@
+/**
+ * 全局样式入口
+ * 加载 Tailwind 层并定义页面基础样式与背景纹理
+ */
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    color-scheme: dark;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    background: #0a0e14;
+    overflow: hidden;
+}
+
+button,
+textarea {
+    font: inherit;
+}
+
+::selection {
+    background: rgba(0, 240, 255, 0.25);
+    color: #e6edf3;
+}
+
+/* CRT 扫描线 */
+.scanlines {
+    opacity: 0.04;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0, 240, 255, 0.15) 2px,
+        rgba(0, 240, 255, 0.15) 4px
+    );
+    pointer-events: none;
+}
+
+/* 终端网格背景 */
+.grid-bg {
+    background-image:
+        linear-gradient(rgba(0, 240, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 240, 255, 0.04) 1px, transparent 1px);
+    background-size: 24px 24px;
+}
+
+/* 霓虹边框面板 */
+.neon-panel {
+    border: 1px solid rgba(0, 240, 255, 0.2);
+    background: rgba(15, 20, 25, 0.85);
+    box-shadow:
+        inset 0 0 20px rgba(0, 240, 255, 0.03),
+        0 0 0 1px rgba(0, 240, 255, 0.08);
+}
+
+/* 终端光标 */
+.cursor-blink::after {
+    content: "▋";
+    color: #00f0ff;
+    animation: blink 1.2s step-end infinite;
+    margin-left: 2px;
+}
+
+/* 滚动条极客化 */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0a0e14;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 240, 255, 0.25);
+    border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 240, 255, 0.45);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
