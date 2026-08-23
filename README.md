@@ -47,7 +47,7 @@
 | 主线             | 做什么                                                                   | 涉及模块                                     |
 | ---------------- | ------------------------------------------------------------------------ | -------------------------------------------- |
 | 元数据知识库构建 | 抽取教学数仓中的表、字段、指标和字段取值，写入结构化库、向量库和全文索引 | `MySQL` / `Qdrant` / `Elasticsearch` / `TEI` |
-| 自然语言问数     | 基于用户问题完成召回、上下文整理、SQL 生成校验执行，并把过程流式返回前端 | `LangGraph` / `FastAPI` / `SSE` / `React`    |
+| 自然语言查库     | 基于用户问题完成召回、上下文整理、SQL 生成校验执行，并把过程流式返回前端 | `LangGraph` / `FastAPI` / `SSE` / `React`    |
 
 电商查库查询结果页：LangGraph 执行流程、SQL 校验执行和查询结果表格
 <img width="858" height="1202" alt="D9$3~5V(4NOC(@RGXUKYES4" src="https://github.com/user-attachments/assets/847bf827-cddd-4a42-a01e-abcecf698800" />)
@@ -142,13 +142,11 @@ llm:
 
 ### 5. 准备 Embedding 模型
 
-项目通过 `TEI` 加载 `BAAI/bge-large-zh-v1.5`。模型文件体积较大，无法再仓库中进行提交，需要先下载到 Docker 挂载目录：
+项目通过 `TEI` 加载 `BAAI/bge-large-zh-v1.5`。需要先下载到 Docker 挂载目录：
 
 ```bash
 uv run hf download BAAI/bge-large-zh-v1.5 --local-dir docker/embedding/bge-large-zh-v1.5
 ```
-
-如果手动下载，请解压到：`docker/embedding/bge-large-zh-v1.5`路径下。
 
 ### 6. 启动 Docker 基础服务
 
@@ -197,17 +195,6 @@ cd frontend
 pnpm install
 pnpm dev
 ```
-
-## 🚧 能力边界
-
-这套项目主要关注智能问数的学习流程，不刻意覆盖生产治理能力，例如：
-
-- 用户登录、角色权限和数据权限控制
-- 多租户隔离
-- SQL 安全审计和执行白名单
-- 查询缓存、限流和性能治理
-- 系统化评测集与自动化回归评测
-- 监控告警、链路追踪平台和灰度发布
 - 更复杂的多轮问数记忆、追问改写和会话管理
 
 这些能力适合在基础流程跑通之后继续扩展。`shopkeeper-agent` 更适合承担一个清晰角色：先把智能问数最关键、最必要、最值得学习的工程链路讲清楚、跑起来，并为后续扩展企业级能力打基础。
