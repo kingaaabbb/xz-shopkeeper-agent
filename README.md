@@ -5,9 +5,9 @@
 
 <div align='center'>
 
-![AI](https://img.shields.io/badge/AI-Agent-00c853?style=flat)
-![Python](https://img.shields.io/badge/Python-3.14-3776AB.svg?logo=python&logoColor=white)
-![LangGraph](https://img.shields.io/badge/LangGraph-Agentic%20Workflow-1C3C3C.svg)
+![AI]
+![Python]
+![LangGraph]
 </div>
 
 这个项目围绕电商数仓问数场景，先构建元数据知识库，再做字段、指标、字段取值的混合检索，随后用 LangGraph 编排多阶段问数流程，完成 SQL 生成、校验、修正、执行和前端流式展示。
