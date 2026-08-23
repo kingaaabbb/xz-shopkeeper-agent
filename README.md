@@ -182,20 +182,6 @@ uv run python -m app.scripts.build_meta_knowledge -c conf/meta_config.yaml
 uv run fastapi dev main.py
 ```
 
-后端接口：
-
-```text
-POST http://127.0.0.1:8000/api/query
-```
-
-请求示例：
-
-```json
-{
-    "query": "统计华北地区的销售总额"
-}
-```
-
 SSE 消息类型：
 
 | 类型       | 含义         |
