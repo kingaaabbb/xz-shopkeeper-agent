@@ -12,7 +12,8 @@
 
 这个项目围绕电商数仓问数场景，先构建元数据知识库，再做字段、指标、字段取值的混合检索，随后用 LangGraph 编排多阶段问数流程，完成 SQL 生成、校验、修正、执行和前端流式展示。
 
-![电商查库前端首页：样例问题、自然语言输入和智能数据分析 Agent 界面](<img width="2557" height="1355" alt="image" src="https://github.com/user-attachments/assets/b4d86885-9525-4dd5-a29f-1e5b346bbc70" />)
+电商查库前端首页：样例问题、自然语言输入和智能数据分析 Agent 界面
+<img width="2557" height="1355" alt="image" src="https://github.com/user-attachments/assets/b4d86885-9525-4dd5-a29f-1e5b346bbc70" />
 
 ## 📖 项目介绍
 
@@ -48,7 +49,8 @@
 | 元数据知识库构建 | 抽取教学数仓中的表、字段、指标和字段取值，写入结构化库、向量库和全文索引 | `MySQL` / `Qdrant` / `Elasticsearch` / `TEI` |
 | 自然语言问数     | 基于用户问题完成召回、上下文整理、SQL 生成校验执行，并把过程流式返回前端 | `LangGraph` / `FastAPI` / `SSE` / `React`    |
 
-![电商查库查询结果页：LangGraph 执行流程、SQL 校验执行和查询结果表格](<img width="858" height="1202" alt="D9$3~5V(4NOC(@RGXUKYES4" src="https://github.com/user-attachments/assets/847bf827-cddd-4a42-a01e-abcecf698800" />)
+电商查库查询结果页：LangGraph 执行流程、SQL 校验执行和查询结果表格
+<img width="858" height="1202" alt="D9$3~5V(4NOC(@RGXUKYES4" src="https://github.com/user-attachments/assets/847bf827-cddd-4a42-a01e-abcecf698800" />)
 
 ## 🛠️ 项目技术栈
 
