@@ -3,13 +3,6 @@
   <h4><b>xz-shopkeeper-agent</b></h4>
 </div>
 
-<div align='center'>
-
-![AI]
-![Python]
-![LangGraph]
-</div>
-
 这个项目围绕电商数仓问数场景，先构建元数据知识库，再做字段、指标、字段取值的混合检索，随后用 LangGraph 编排多阶段问数流程，完成 SQL 生成、校验、修正、执行和前端流式展示。
 
 电商查库前端首页：样例问题、自然语言输入和智能数据分析 Agent 界面
